@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Vision Future Frame – Der Rahmen, durch den die Zukunft sichtbar wird.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Vision Future Frame (VFF) entwickelt KI-gestützte Infrastrukturen für Verwaltung, Organisationen und Förderprozesse.">
+  <meta name="description" content="Vision Future Frame (VFF) entwickelt KI-gestützte Infrastrukturrahmen für Verwaltung, Organisationen und Förderprozesse.">
   <style>
     :root {
       --bg: #050814;
@@ -13,63 +13,82 @@
       --accent-soft: rgba(123, 92, 255, 0.16);
       --text-main: #f4f4f7;
       --text-soft: #b3b7c9;
-      --card-bg: #101528;
-      --border-soft: rgba(255, 255, 255, 0.07);
-      --radius-xl: 22px;
-      --shadow-soft: 0 22px 60px rgba(0,0,0,0.55);
+      --border-subtle: #20263a;
+      --pill-bg: rgba(244, 244, 247, 0.03);
+      --pill-border: rgba(244, 244, 247, 0.08);
+      --danger: #ff4b6a;
+      --ok: #3bd28f;
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #1a2340 0, #050814 55%);
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Inter", "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111633 0, #050814 42%, #02030b 100%);
       color: var(--text-main);
-      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
     a {
-      color: var(--accent);
+      color: inherit;
       text-decoration: none;
     }
 
     .page {
+      min-height: 100vh;
       max-width: 1120px;
       margin: 0 auto;
-      padding: 32px 20px 64px;
+      padding: 20px 16px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
     }
 
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      padding: 8px 4px 24px;
+      gap: 18px;
+      padding: 12px 18px;
+      border-radius: 16px;
+      background: radial-gradient(circle at top left, #1b2146 0, #070a17 60%);
+      border: 1px solid rgba(123, 92, 255, 0.26);
+      box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.75),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
+      position: sticky;
+      top: 12px;
+      z-index: 10;
+      backdrop-filter: blur(18px);
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .logo-mark {
       width: 32px;
       height: 32px;
-      border-radius: 10px;
-      background: conic-gradient(from 210deg, #7b5cff, #52ffe0, #7b5cff);
-      box-shadow: 0 0 26px rgba(123,92,255,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-mark svg {
+      width: 100%;
+      height: 100%;
     }
 
     .logo-text-main {
       font-weight: 600;
-      letter-spacing: 0.06em;
-      font-size: 0.9rem;
+      letter-spacing: 0.14em;
+      font-size: 0.75rem;
       text-transform: uppercase;
     }
 
@@ -81,38 +100,30 @@
     nav {
       display: flex;
       gap: 14px;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
+      color: var(--text-soft);
     }
 
     nav a {
       padding: 6px 10px;
       border-radius: 999px;
-      color: var(--text-soft);
+      border: 1px solid transparent;
+      transition: all 0.16s ease-out;
+      cursor: pointer;
     }
 
     nav a:hover {
-      background: rgba(255,255,255,0.04);
+      border-color: rgba(244, 244, 247, 0.1);
+      background: rgba(15, 23, 42, 0.8);
       color: var(--text-main);
     }
 
     .hero {
-      margin-top: 10px;
-      padding: 28px 24px 30px;
-      border-radius: 28px;
-      background: radial-gradient(circle at top left, rgba(123,92,255,0.3), transparent 50%),
-                  linear-gradient(145deg, rgba(15,23,42,0.96), rgba(5,8,20,0.98));
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border-soft);
       display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.05fr);
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
       gap: 32px;
-    }
-
-    @media (max-width: 860px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-        padding: 22px 18px 26px;
-      }
+      align-items: center;
+      margin-top: 8px;
     }
 
     .badge {
@@ -121,309 +132,430 @@
       gap: 8px;
       padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.75);
-      border: 1px solid rgba(123,92,255,0.4);
-      font-size: 0.75rem;
-      color: var(--text-soft);
-      margin-bottom: 14px;
+      border: 1px solid rgba(79, 70, 229, 0.7);
+      background: radial-gradient(circle at top left, rgba(123, 92, 255, 0.24), rgba(15, 23, 42, 0.9));
+      font-size: 0.76rem;
+      color: #e0e2ff;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .badge-dot {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 999px;
-      background: #52ffe0;
-      box-shadow: 0 0 14px rgba(82,255,224,0.9);
+      background: var(--ok);
+      box-shadow: 0 0 10px rgba(59, 210, 143, 0.8);
     }
 
-    .hero h1 {
-      font-size: clamp(2.1rem, 3.2vw, 2.7rem);
-      line-height: 1.15;
-      margin-bottom: 8px;
+    h1 {
+      margin: 16px 0 12px;
+      font-size: 2.15rem;
+      line-height: 1.18;
+      letter-spacing: 0.02em;
     }
 
-    .hero-slogan {
-      font-size: 0.92rem;
-      color: var(--text-soft);
-      font-style: italic;
-      margin-bottom: 16px;
+    .hero-highlight {
+      background: linear-gradient(90deg, #ffffff, #9aa4ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
-    .hero-lead {
-      color: var(--text-soft);
+    .hero-secondary {
+      margin: 0;
       font-size: 0.98rem;
+      color: var(--text-soft);
       max-width: 540px;
-      margin-bottom: 22px;
     }
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .btn-primary,
-    .btn-ghost {
-      border-radius: 999px;
-      padding: 10px 18px;
-      font-size: 0.9rem;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out;
-      display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
+      margin-top: 22px;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #7b5cff, #52ffe0);
-      color: #050814;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.55);
-      font-weight: 600;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(126, 89, 255, 0.9);
+      background: radial-gradient(circle at top left, #7b5cff, #4431a3);
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.04);
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out,
+        background 0.15s ease-out;
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 18px 48px rgba(0,0,0,0.7);
+      box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.8),
+        0 0 0 1px rgba(255, 255, 255, 0.06);
+      background: radial-gradient(circle at top left, #8b6cff, #4f37c0);
     }
 
-    .btn-ghost {
-      background: transparent;
+    .btn-secondary {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--text-soft);
+      font-size: 0.86rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease-out;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(148, 163, 184, 0.9);
       color: var(--text-main);
-      border-color: rgba(255,255,255,0.14);
+      background: rgba(15, 23, 42, 0.95);
     }
 
-    .btn-ghost:hover {
-      background: rgba(15,23,42,0.9);
-      transform: translateY(-1px);
+    .btn-secondary span.icon {
+      font-size: 1rem;
     }
 
-    .hero-secondary {
+    .hero-meta {
+      margin-top: 10px;
       font-size: 0.78rem;
       color: var(--text-soft);
-      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .hero-meta strong {
+      color: #e5e7ff;
+      font-weight: 500;
     }
 
     .hero-visual {
       position: relative;
-      min-height: 190px;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .orb {
-      position: absolute;
-      inset: 0;
-      margin: auto;
-      width: 210px;
-      height: 210px;
-      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      border-radius: 999px;
       background:
-        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.4), transparent 55%),
-        radial-gradient(circle at 80% 80%, rgba(82,255,224,0.45), transparent 65%),
-        radial-gradient(circle at 10% 90%, rgba(123,92,255,0.9), transparent 55%);
+        radial-gradient(circle at 20% 0%, rgba(82, 255, 224, 0.9), transparent 55%),
+        radial-gradient(circle at 90% 10%, rgba(123, 92, 255, 0.95), transparent 55%),
+        radial-gradient(circle at 50% 100%, rgba(14, 165, 233, 0.75), transparent 55%);
       box-shadow:
-        0 0 80px rgba(123,92,255,0.9),
-        0 0 140px rgba(82,255,224,0.6);
-      border: 1px solid rgba(255,255,255,0.18);
-      backdrop-filter: blur(20px);
+        0 0 60px rgba(82, 255, 224, 0.7),
+        0 0 80px rgba(123, 92, 255, 0.8),
+        0 0 120px rgba(15, 23, 42, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .orb::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border-radius: inherit;
+      border: 1px solid rgba(244, 244, 247, 0.2);
+      backdrop-filter: blur(12px);
     }
 
     .orb-ring {
       position: absolute;
-      inset: 0;
-      margin: auto;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      border: 1px dashed rgba(255,255,255,0.18);
-      opacity: 0.8;
+      width: 220px;
+      height: 220px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow:
+        0 0 40px rgba(15, 23, 42, 0.9),
+        0 0 80px rgba(15, 23, 42, 0.9);
     }
 
     .orb-label {
       position: absolute;
-      bottom: 18px;
+      bottom: 2px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 0.75rem;
-      padding: 6px 10px;
+      font-size: 0.7rem;
+      padding: 4px 9px;
       border-radius: 999px;
-      background: rgba(5,8,20,0.9);
-      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
       color: var(--text-soft);
-      backdrop-filter: blur(16px);
+      backdrop-filter: blur(10px);
       white-space: nowrap;
     }
 
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
     section {
-      margin-top: 42px;
+      padding: 20px 18px;
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.92), #050814);
+      border: 1px solid rgba(15, 23, 42, 1);
+      box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.8),
+        inset 0 0 0 1px rgba(148, 163, 184, 0.06);
     }
 
     .section-label {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--text-soft);
+      letter-spacing: 0.16em;
+      color: #9ca3ff;
       margin-bottom: 6px;
     }
 
     .section-title {
-      font-size: 1.4rem;
-      margin-bottom: 14px;
+      margin: 0 0 10px;
+      font-size: 1.35rem;
     }
 
     .section-text {
-      font-size: 0.96rem;
+      margin: 0;
+      font-size: 0.93rem;
       color: var(--text-soft);
-      max-width: 780px;
+      max-width: 720px;
     }
 
-    .cards {
-      margin-top: 22px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    @media (max-width: 960px) {
-      .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 720px) {
-      .cards {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--border-soft);
-      padding: 16px 16px 18px;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.4);
-    }
-
-    .card-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.78rem;
-      padding: 3px 9px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    .card h3 {
-      font-size: 1.02rem;
-      margin-bottom: 6px;
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      color: var(--text-soft);
-      margin-bottom: 10px;
-    }
-
-    .card ul {
-      list-style: none;
-      font-size: 0.86rem;
-      color: var(--text-soft);
-    }
-
-    .card ul li::before {
-      content: "– ";
-      color: var(--accent);
+    .section-text strong {
+      color: #e5e7ff;
     }
 
     .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
     .pill {
       font-size: 0.78rem;
-      padding: 4px 10px;
+      padding: 6px 10px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid var(--border-soft);
-      color: var(--text-soft);
+      border: 1px solid var(--pill-border);
+      background: var(--pill-bg);
+      color: #d1d5e4;
+      backdrop-filter: blur(8px);
     }
 
-    .contact-box {
-      margin-top: 20px;
+    .cards {
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
-      gap: 26px;
-      background: var(--bg-soft);
-      border-radius: 24px;
-      border: 1px solid var(--border-soft);
-      padding: 18px 18px 20px;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
     }
 
-    @media (max-width: 860px) {
-      .contact-box {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    .cards.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .contact-meta p {
-      font-size: 0.92rem;
+    .card {
+      padding: 14px 14px 14px;
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.9), #050814);
+      font-size: 0.86rem;
       color: var(--text-soft);
-      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
-    .contact-meta .line {
-      font-size: 0.88rem;
+    .card-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #9ca3ff;
+    }
+
+    .card h3 {
+      font-size: 0.98rem;
+      margin: 0;
       color: var(--text-main);
-      margin-bottom: 4px;
     }
 
-    form {
+    .card p {
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .card ul {
+      margin: 8px 0 0 16px;
+      padding: 0;
       display: grid;
-      gap: 10px;
+      gap: 4px;
     }
 
-    label {
-      font-size: 0.8rem;
+    .card li {
+      margin: 0;
+    }
+
+    .inline-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 0.74rem;
+      color: #e5e7ff;
+      white-space: nowrap;
+    }
+
+    .inline-tag-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(123, 92, 255, 0.9);
+    }
+
+    .list-muted {
+      margin: 10px 0 0 16px;
+      padding: 0;
+      font-size: 0.86rem;
+      color: var(--text-soft);
+      display: grid;
+      gap: 3px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 12px;
+      align-items: flex-start;
+    }
+
+    .note-box {
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.8);
+      font-size: 0.82rem;
       color: var(--text-soft);
     }
 
-    input, textarea {
-      width: 100%;
-      padding: 8px 10px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.15);
-      background: rgba(5,8,20,0.9);
-      color: var(--text-main);
+    .divider {
+      margin-top: 16px;
+      height: 1px;
+      background: radial-gradient(circle at center, rgba(148, 163, 184, 0.5), transparent);
+      opacity: 0.8;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 14px;
+      align-items: flex-start;
+    }
+
+    .contact-grid p {
       font-size: 0.9rem;
     }
 
-    textarea {
-      min-height: 90px;
-      resize: vertical;
+    .contact-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 6px;
+      font-size: 0.88rem;
     }
 
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(123,92,255,0.6);
+    .contact-list li span.label {
+      display: inline-block;
+      width: 74px;
+      color: var(--text-soft);
+    }
+
+    .contact-email {
+      color: #c4c8ff;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
     }
 
     footer {
-      margin-top: 42px;
-      padding: 16px 4px 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.78rem;
+      margin-top: 6px;
+      font-size: 0.75rem;
       color: var(--text-soft);
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       gap: 8px;
+      flex-wrap: wrap;
+      padding: 0 2px;
+    }
+
+    footer a {
+      color: #9ca3ff;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .cards,
+      .cards.two {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .grid-2,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 16px 12px 40px;
+      }
+
+      section {
+        padding: 16px 14px;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
     }
   </style>
 </head>
@@ -431,7 +563,21 @@
   <div class="page">
     <header>
       <div class="logo">
-        <div class="logo-mark"></div>
+        <div class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40">
+            <!-- L-förmiger offener Frame (Rahmen) -->
+            <path d="M10 8 V32 H34"
+                  fill="none"
+                  stroke="#52ffe0"
+                  stroke-width="2.2"
+                  stroke-linecap="round" />
+            <!-- Inneres Portal / Fenster -->
+            <rect x="16" y="12" width="16" height="14" rx="3"
+                  fill="none"
+                  stroke="#7b5cff"
+                  stroke-width="1.8" />
+          </svg>
+        </div>
         <div>
           <div class="logo-text-main">VISION FUTURE FRAME</div>
           <div class="logo-text-sub">Public Interest AI &amp; Infrastructure</div>
@@ -453,21 +599,25 @@
             <div class="badge-dot"></div>
             Im Aufbau – offen für Pilotpartner:innen
           </div>
-          <h1>Wir bauen den Rahmen für die nächste Generation öffentlicher und organisationaler Infrastruktur.</h1>
-          <p class="hero-slogan">Der Rahmen, durch den die Zukunft sichtbar wird.</p>
-          <p class="hero-lead">
-            Vision Future Frame (VFF) entwickelt KI-gestützte Bausteine, die Verwaltung,
-            Förderprozesse und Organisationen entlasten – transparent, menschenzentriert
-            und zukunftssicher.
+          <h1>Wir bauen den <span class="hero-highlight">Rahmen</span> für die nächste Generation öffentlicher und organisationaler Infrastruktur.</h1>
+          <p class="hero-secondary">
+          Aktuell im Aufbau: erste Prototypen, laufende Förderanträge (u. a. Prototype Fund
+          und NLnet) sowie vorbereitete Gespräche mit dem Landtag und einem Startup-Inkubator.
+          
           </p>
           <div class="hero-actions">
-            <a href="#vision" class="btn-primary">Was hinter VFF steckt</a>
-            <a href="#contact" class="btn-ghost">Erstgespräch anfragen</a>
+            <a href="#contact" class="btn-primary">
+              Gemeinsam Pilotprojekt anstoßen
+              <span>→</span>
+            </a>
+            <a href="#projects" class="btn-secondary">
+              <span class="icon">◎</span>
+              Mehr zu AutoGovNext AI &amp; Co.
+            </a>
           </div>
-          <p class="hero-secondary">
-            Aktuell im Aufbau. Erste Prototypen, Förderanträge und Gespräche mit Parlament,
-            Förderstellen und Inkubatoren laufen.
-          </p>
+          <div class="hero-meta">
+            <span><strong>Vision Future Frame (VFF)</strong> – Rahmen für KI-getriebene öffentliche Infrastruktur</span>
+          </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
           <div class="orb-ring"></div>
@@ -491,6 +641,27 @@
         </p>
       </section>
 
+      <section id="founder">
+        <div class="section-label">Wer hinter VFF steht</div>
+        <h2 class="section-title">Gegründet aus eigener Erfahrung mit Systemen, die Menschen überfordern.</h2>
+        <p class="section-text">
+          Vision Future Frame wurde von <strong>Marcel Smarsch</strong> gegründet – einem Autodidakten,
+          der deutsche Verwaltung, Förderlogiken und Jobcenter nicht aus Studien kennt, sondern aus
+          dem eigenen Lebensweg. Aus dieser Erfahrung ist die Frage entstanden, wie Systeme so gebaut
+          werden können, dass sie Menschen stärken statt bremsen.
+          <br><br>
+          Statt einen klassischen Karriereweg zu gehen, habe ich mir Programmierung, KI und
+          Systemdenken selbst beigebracht und begonnen, konkrete Prototypen zu entwickeln.
+          Vision Future Frame ist der Rahmen, in dem diese Arbeit zusammenkommt: als offene
+          Infrastruktur, die Bürger:innen entlastet und Institutionen zukunftsfähiger macht.
+        </p>
+        <div class="pill-row">
+          <div class="pill">Autodidakt mit Praxisblick statt Theorieblasen</div>
+          <div class="pill">Systemdenker zwischen Mensch, Daten &amp; Regeln</div>
+          <div class="pill">Brücke zwischen Tech, Alltag, Politik &amp; Förderung</div>
+        </div>
+      </section>
+
       <section id="vision">
         <div class="section-label">Vision &amp; Rahmen</div>
         <h2 class="section-title">Eine entstehende Holding für mehrere Generationen von KI-Modellen.</h2>
@@ -501,46 +672,46 @@
           Tools, die Menschen den Zugang zu komplexen Systemen erleichtern.
           <br><br>
           AutoGovNext AI ist der erste Baustein. Weitere Modelle werden bewusst erst dann öffentlich,
-          wenn sie stabil genug für echte Kooperationen und Pilotpartner sind. VFF ist der Rahmen,
-          durch den diese Zukunft Stück für Stück sichtbar wird.
+          wenn sie Substanz und reale Anknüpfungspunkte haben – um Hypes zu vermeiden und echte
+          Wirkung zu ermöglichen.
         </p>
+        <div class="pill-row">
+          <div class="pill">Offener Rahmen statt starres Produkt</div>
+          <div class="pill">Public-Interest-Perspektive statt reiner Profitlogik</div>
+          <div class="pill">Langfristig: Holding-Struktur für mehrere KI-Linien</div>
+        </div>
       </section>
 
       <section id="projects">
-        <div class="section-label">Projekte &amp; Bausteine</div>
-        <h2 class="section-title">Wir denken in Bausteinen statt in Insellösungen.</h2>
-        <p class="section-text">
-          Unter Vision Future Frame entstehen Projekte, die als Bausteine für eine neue Art von Verwaltung
-          und Organisation gedacht sind. Einige sind sichtbar, andere noch bewusst unter der Oberfläche –
-          bis sie bereit sind, getragen zu werden.
-        </p>
-
+        <div class="section-label">Projekte unter dem Dach von VFF</div>
+        <h2 class="section-title">Von AutoGovNext AI aus gedacht – mit Raum für mehr.</h2>
         <div class="cards">
           <article class="card">
-            <div class="card-tag">Flagship</div>
-            <h3>AutoGovNext AI</h3>
+            <div class="card-tag">Pilotprojekt</div>
+            <h3>AutoGovNext AI – Verwaltungs-KI &amp; Formularkinfrastruktur</h3>
             <p>
-              Eine Verwaltungs-KI, die Formulare, Regeln und Entscheidungslogiken
-              maschinenlesbar und überprüfbar macht – als offene Infrastruktur, nicht als Blackbox.
+              AutoGovNext AI denkt Verwaltungsprozesse neu: Anträge, Formulare und Entscheidungsregeln
+              werden so strukturiert, dass sie maschinenlesbar, transparent und wiederverwendbar sind.
             </p>
             <ul>
-              <li>Citizen Sheet, FormSpec &amp; RuleSpec als Kern-Datenmodelle</li>
-              <li>Transparente Regel-Engine für Prüfungen &amp; Hinweise</li>
-              <li>Schlanke Referenz-App für reale Antragswege</li>
+              <li>Abbildung von Formularen und Regeln als offene Infrastruktur</li>
+              <li>Schritt-für-Schritt-Begleitung für Bürger:innen &amp; Organisationen</li>
+              <li>Langfristig: Baustein für teilautomatisierte Verwaltungsprozesse</li>
             </ul>
           </article>
 
           <article class="card">
-            <div class="card-tag">Lab</div>
-            <h3>VFF Innovation Lab</h3>
+            <div class="card-tag">Rahmen</div>
+            <h3>VFF als Infrastruktur-Holding</h3>
             <p>
-              Ein Raum für Prototypen und Experimente rund um Public-Interest-KI,
-              digitale Verwaltung und neue Infrastrukturen – viele Projekte noch bewusst im Hintergrund.
+              Vision Future Frame ist der strukturelle Rahmen um AutoGovNext AI und weitere zukünftige
+              KI-Modelle herum – mit Fokus auf Public-Interest-Tech, europäische Förderlogiken und
+              langfristige Partnerschaften.
             </p>
             <ul>
-              <li>Experimente mit Verwaltungs- und Prozessautomatisierung</li>
-              <li>Neue Schnittstellen zwischen Bürger:innen, Daten &amp; Staat</li>
-              <li>Grundlagen für weitere VFF-Modelle und Partnerschaften</li>
+              <li>Denken in Generationen, nicht in Quartalen</li>
+              <li>Ausrichtung an europäischen Werten &amp; digitaler Souveränität</li>
+              <li>Raum für Spin-offs, Pilotprojekte und Kooperationen</li>
             </ul>
           </article>
 
@@ -564,8 +735,8 @@
         <div class="section-label">Tätigkeitsfelder</div>
         <h2 class="section-title">Wie wir heute schon mit Partner:innen arbeiten.</h2>
         <p class="section-text">
-          VFF ist im Aufbau, aber kein reines Zukunftsprojekt. Wir arbeiten bereits jetzt mit
-          Verwaltungen, Organisationen und Unternehmen daran, Prozesse neu zu denken und erste
+          VFF ist im Aufbau – aber kein theoretisches Projekt. Erste Prototypen, Förderanträge
+          und Gespräche mit Verwaltungen, Organisationen und Programmen helfen dabei, konkrete
           Pilotprojekte vorzubereiten.
         </p>
 
@@ -578,37 +749,37 @@
               echten Alltag anfühlt – mit AutoGovNext-Bausteinen oder anderen VFF-Elementen.
             </p>
             <ul>
-              <li>Auswahl eines klar umrissenen Prozesses (z. B. Formular, Förderprogramm)</li>
-              <li>Gemeinsames Design eines Piloten mit VFF-Bausteinen</li>
-              <li>Begleitung von der ersten Idee bis zur Auswertung der Ergebnisse</li>
+              <li>Auswahl eines klar umrissenen Prozesses (z. B. Formularstrecke)</li>
+              <li>Analyse von Bottlenecks &amp; Hürden</li>
+              <li>Entwicklung erster Prototypen, die konkret spürbar sind</li>
             </ul>
           </article>
 
           <article class="card">
-            <div class="card-tag">Prozesse &amp; KI</div>
-            <h3>KI-Prozessdesign &amp; Integration</h3>
+            <div class="card-tag">Beratung</div>
+            <h3>Strategische Rahmensetzung für KI &amp; Infrastruktur</h3>
             <p>
-              Wir helfen Organisationen, Prozesse so zu gestalten, dass KI nicht zum Chaos führt,
-              sondern zum Hebel wird – klar strukturiert, nachvollziehbar und für Teams wirklich nutzbar.
+              Beratung für Akteur:innen, die KI nicht als „Add-on“, sondern als strukturellen
+              Bestandteil ihrer Organisation denken wollen – mit Fokus auf Public Interest.
             </p>
             <ul>
-              <li>Analyse bestehender Abläufe und Identifikation sinnvoller KI-Einsatzpunkte</li>
-              <li>Design von „AI-augmented Workflows“ – was übernimmt KI, was bleibt menschlich?</li>
-              <li>Roadmap für schrittweise Einführung statt Big-Bang-Überforderung</li>
+              <li>Klärung: Wo lohnt sich KI wirklich – und wo nicht?</li>
+              <li>Denken in Infrastrukturen statt in Einzel-Tools</li>
+              <li>Übersetzung zwischen Tech, Fachlichkeit &amp; Governance</li>
             </ul>
           </article>
 
           <article class="card">
             <div class="card-tag">Sparring</div>
-            <h3>Strategische Beratung &amp; Future Frames</h3>
+            <h3>Founder- &amp; Policy-Sparring</h3>
             <p>
-              Sparring auf Augenhöhe für Entscheider:innen, Inkubatoren und Organisationen, die
-              verstehen wollen, welche Rolle KI, Verwaltung und Förderung in ihrer Zukunft spielen.
+              Sparring für Menschen und Institutionen, die an der Schnittstelle von Politik, Verwaltung,
+              Förderung und Technologie arbeiten – mit einem Blick für Hebel, Risiken und Chancen.
             </p>
             <ul>
-              <li>1:1-Sparrings für Führungskräfte, Politik, Inkubatoren &amp; Förderakteure</li>
-              <li>Entwicklung von „Future Frames“ für Organisationen und Regionen</li>
-              <li>Übersetzung zwischen Tech, Alltag, Politik und Förderlogik</li>
+              <li>Sparring zu Vision, Struktur &amp; Förderstrategie</li>
+              <li>Einordnung von Trends jenseits des Buzzwords „AI“</li>
+              <li>Mitdenken von europäischen und gesellschaftlichen Rahmenbedingungen</li>
             </ul>
           </article>
         </div>
@@ -627,57 +798,67 @@
         <div class="pill-row">
           <div class="pill">Verwaltungen &amp; öffentliche Stellen mit Pilotideen</div>
           <div class="pill">Organisationen &amp; Unternehmen mit komplexen Prozessen</div>
-          <div class="pill">Inkubatoren &amp; Förderprogramme mit GovTech-Fokus</div>
-          <div class="pill">Investor:innen mit Interesse an Public-Interest-KI</div>
+          <div class="pill">Initiativen &amp; Fonds mit Interesse an Public-Interest-KI</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="grid-2">
+          <div>
+            <p class="section-text">
+              Ob kleines Pilotprojekt, strategische Begleitung oder gemeinsames Denken in größeren
+              Strukturen – entscheidend ist, dass es nicht nur um kurzfristige Effekte geht, sondern
+              um das Aufbauen von Infrastruktur, die trägt.
+            </p>
+          </div>
+          <div class="note-box">
+            <strong>Wichtig:</strong> VFF ist bewusst nicht „fertig“. Wer mit uns arbeitet, gestaltet
+            mit – und hilft dabei, die nächsten Generationen von Infrastrukturrahmen mit zu bauen.
+          </div>
         </div>
       </section>
 
       <section id="contact">
-        <div class="section-label">Kontakt</div>
-        <h2 class="section-title">Pilotideen, Sparring oder Rückfragen?</h2>
-
-        <div class="contact-box">
-          <div class="contact-meta">
+        <div class="section-label">Kontakt &amp; Status</div>
+        <h2 class="section-title">Im Aufbau – mit klarer Richtung und offener Tür.</h2>
+        <div class="contact-grid">
+          <div>
             <p>
-              Sie möchten verstehen, ob Vision Future Frame zu Ihrer Organisation passt, ein
-              gemeinsames Pilotprojekt andenken oder eine bestehende Idee spiegeln?
+              Vision Future Frame befindet sich in der Aufbauphase: erste Prototypen, Förderanträge
+              (u. a. Prototype Fund, NLnet) und Gespräche mit politischen Akteur:innen, Förderstellen
+              und einem Startup-Inkubator sind angestoßen.
             </p>
-            <p class="line"><strong>E-Mail:</strong> <a href="mailto:marcel.smarsch@visionfutureframe.de">marcel.smarsch@visionfutureframe.de</a></p>
-            <p class="line"><strong>Sitz:</strong> Magdeburg, Deutschland</p>
-            <p class="line"><strong>Status:</strong> VFF UG (haftungsbeschränkt) i. G., Fokus auf AutoGovNext AI, Pilotprojekte &amp; strategisches Sparring.</p>
+            <p>
+              Wenn Sie Interesse an einem Gespräch, einem Pilotprojekt oder einem vertraulichen
+              Austausch zu AutoGovNext AI und weiteren VFF-Vorhaben haben, melden Sie sich gern direkt.
+            </p>
+            <div class="pill-row">
+              <div class="pill">
+                <span class="inline-tag-dot"></span>
+                Diskrete Vorabgespräche möglich
+              </div>
+              <div class="pill">
+                <span class="inline-tag-dot"></span>
+                Fokus auf Wirkung &amp; Substanz
+              </div>
+            </div>
           </div>
-
-          <form action="mailto:marcel.smarsch@visionfutureframe.de" method="post" enctype="text/plain">
-            <div>
-              <label for="name">Name</label>
-              <input id="name" name="Name" type="text" placeholder="Ihr Name">
-            </div>
-            <div>
-              <label for="org">Organisation</label>
-              <input id="org" name="Organisation" type="text" placeholder="Organisation (optional)">
-            </div>
-            <div>
-              <label for="email">E-Mail</label>
-              <input id="email" name="Absender-E-Mail" type="email" placeholder="Ihre E-Mail-Adresse">
-            </div>
-            <div>
-              <label for="message">Worum geht es?</label>
-              <textarea id="message" name="Nachricht" placeholder="Kurze Beschreibung Ihres Anliegens"></textarea>
-            </div>
-            <button type="submit" class="btn-primary">Nachricht senden</button>
-          </form>
+          <div>
+            <ul class="contact-list">
+              <li><span class="label">Name</span> Marcel Smarsch</li>
+              <li><span class="label">Organisation</span> Vision Future Frame UG (i. G.)</li>
+              <li><span class="label">E-Mail</span> <a class="contact-email" href="mailto:marcel.smarsch@visionfutureframe.de">marcel.smarsch@visionfutureframe.de</a></li>
+              <li><span class="label">Ort</span> Magdeburg, Deutschland</li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <span>© <span id="year"></span> Vision Future Frame. Alle Rechte vorbehalten.</span>
-      <span>Im Aufbau – the frame that makes the future visible.</span>
+      <span>© 2025 Vision Future Frame – The frame that makes the future visible.</span>
+      <span>Im Aufbau · Public Interest AI &amp; Infrastructure</span>
     </footer>
   </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
