@@ -53,10 +53,10 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      padding: 12px 18px;
-      border-radius: 16px;
-      background: radial-gradient(circle at top left, #1b2146 0, #070a17 60%);
-      border: 1px solid rgba(123, 92, 255, 0.26);
+      padding: 14px 20px;
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, #1d2450 0, #070a17 60%);
+      border: 1px solid rgba(123, 92, 255, 0.32);
       box-shadow:
         0 24px 70px rgba(0, 0, 0, 0.75),
         0 0 0 1px rgba(255, 255, 255, 0.02);
@@ -73,8 +73,8 @@
     }
 
     .logo-mark {
-      width: 32px;
-      height: 32px;
+      width: 40px;
+      height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -83,17 +83,20 @@
     .logo-mark svg {
       width: 100%;
       height: 100%;
+      filter:
+        drop-shadow(0 0 8px rgba(82, 255, 224, 0.6))
+        drop-shadow(0 0 14px rgba(123, 92, 255, 0.7));
     }
 
     .logo-text-main {
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      font-size: 0.75rem;
+      font-weight: 650;
+      letter-spacing: 0.18em;
+      font-size: 0.82rem;
       text-transform: uppercase;
     }
 
     .logo-text-sub {
-      font-size: 0.75rem;
+      font-size: 0.76rem;
       color: var(--text-soft);
     }
 
@@ -565,17 +568,22 @@
       <div class="logo">
         <div class="logo-mark" aria-hidden="true">
           <svg viewBox="0 0 40 40">
-            <!-- L-förmiger offener Frame (Rahmen) -->
-            <path d="M10 8 V32 H34"
+            <!-- Hintergrund-Feld für mehr Sichtbarkeit -->
+            <rect x="4" y="4" width="32" height="32" rx="10"
+                  fill="#050816"
+                  stroke="rgba(148,163,184,0.35)"
+                  stroke-width="1.2" />
+            <!-- äußerer offener Rahmen -->
+            <path d="M10 10 V30 H30"
                   fill="none"
                   stroke="#52ffe0"
-                  stroke-width="2.2"
+                  stroke-width="2.4"
                   stroke-linecap="round" />
-            <!-- Inneres Portal / Fenster -->
-            <rect x="16" y="12" width="16" height="14" rx="3"
-                  fill="none"
+            <!-- inneres Portal / Fenster -->
+            <rect x="15" y="14" width="14" height="14" rx="4"
+                  fill="rgba(8,14,35,0.9)"
                   stroke="#7b5cff"
-                  stroke-width="1.8" />
+                  stroke-width="2" />
           </svg>
         </div>
         <div>
