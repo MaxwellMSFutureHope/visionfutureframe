@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proof &amp; Artefakte – Vision Future Frame</title>
+  <meta name="description" content="Aktuelle Artefakte, Demos und Proof-of-Work von Vision Future Frame">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://visionfutureframe.de/proof.html">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='4' y='4' width='32' height='32' rx='10' fill='%23050816' stroke='rgba(148,163,184,0.35)' stroke-width='1.2'/%3E%3Cpath d='M10 10 V30 H30' fill='none' stroke='%2352ffe0' stroke-width='2.4' stroke-linecap='round'/%3E%3Crect x='15' y='14' width='14' height='14' rx='4' fill='rgba(8,14,35,0.9)' stroke='%237b5cff' stroke-width='2'/%3E%3C/svg%3E">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --bg: #050814;
+      --bg-soft: #0b1020;
+      --bg-elevated: #0f172a;
+      --accent: #7b5cff;
+      --text-main: #f4f4f7;
+      --text-soft: #b3b7c9;
+      --border-subtle: #20263a;
+      --ok: #3bd28f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(123, 92, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(82, 255, 224, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at top, #111633 0, #050814 42%, #02030b 100%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      margin-bottom: 40px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 24px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .back-link:hover {
+      gap: 12px;
+      color: var(--text-main);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, #9aa4ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .disclaimer {
+      background: rgba(123, 92, 255, 0.1);
+      border-left: 3px solid var(--accent);
+      padding: 16px 20px;
+      margin: 24px 0 32px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    .disclaimer strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .content {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(15, 23, 42, 0.8);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.75);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 40px 0 20px;
+      color: var(--text-main);
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 32px 0 16px;
+      color: var(--text-main);
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+    }
+
+    .evidence-card {
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(16px);
+      transition: all 0.3s ease;
+    }
+
+    .evidence-card:hover {
+      border-color: rgba(123, 92, 255, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .evidence-card h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .evidence-card p {
+      color: var(--text-soft);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .evidence-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 8px;
+    }
+
+    .status-roadmap {
+      background: rgba(123, 92, 255, 0.2);
+      border: 1px solid rgba(123, 92, 255, 0.4);
+      color: #9ca3ff;
+    }
+
+    .status-progress {
+      background: rgba(123, 92, 255, 0.2);
+      border: 1px solid rgba(123, 92, 255, 0.4);
+      color: #9ca3ff;
+    }
+
+    .demo-panel {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 32px;
+      margin: 32px 0;
+    }
+
+    .demo-tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 24px;
+    }
+
+    .demo-tab {
+      padding: 12px 20px;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .demo-tab:hover {
+      color: var(--text-main);
+    }
+
+    .demo-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .demo-content {
+      min-height: 200px;
+      color: var(--text-soft);
+      line-height: 1.8;
+    }
+
+    .benchmarks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 32px 0;
+    }
+
+    .benchmark-item {
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .benchmark-item h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-soft);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .benchmark-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .benchmark-target {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+    }
+
+    p {
+      color: var(--text-soft);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    a {
+      color: #9ca3ff;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(148, 163, 184, 0.1);
+      text-align: center;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+    }
+
+    footer nav {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 24px 16px;
+      }
+
+      .content {
+        padding: 24px 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .evidence-grid,
+      .benchmarks {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/" class="back-link">
+        ← Zurück zur Startseite
+      </a>
+      <h1>Proof &amp; Artefakte</h1>
+      <div class="disclaimer">
+        <strong>Hinweis:</strong> Diese Seite zeigt aktuelle Artefakte. Alles, was als Roadmap markiert ist, ist geplant – nicht live.
+      </div>
+    </header>
+
+    <div class="content">
+      <section>
+        <h2>Evidence Gallery</h2>
+        <p>Konkrete Artefakte, die zeigen, wie Vision Future Frame arbeitet und welche Prinzipien umgesetzt werden.</p>
+
+        <div class="evidence-grid">
+          <div class="evidence-card">
+            <h4>Quality Gates</h4>
+            <p>Strukturierte Qualitätssicherung für KI-Systeme mit nachvollziehbaren Entscheidungskriterien.</p>
+            <div class="evidence-status status-progress">In Entwicklung</div>
+          </div>
+
+          <div class="evidence-card">
+            <h4>PII-Schutz: Redaction-Konzept</h4>
+            <p>Konzept für mehrstufige Redaction (L0-L3) zur Datenschutz-konformen Verarbeitung von personenbezogenen Informationen.</p>
+            <div class="evidence-status status-progress">Preview verfügbar</div>
+          </div>
+
+          <div class="evidence-card">
+            <h4>Privacy-by-Design</h4>
+            <p>Lokale Datenverarbeitung, Datenminimierung und klare Freigabe-Mechanismen als Grundprinzipien.</p>
+            <div class="evidence-status status-progress">Konzept dokumentiert</div>
+          </div>
+
+          <div class="evidence-card">
+            <h4>AutoGovNext AI Prototyp</h4>
+            <p>Erster Prototyp für maschinenlesbare Verwaltungsprozesse und transparente Entscheidungsregeln.</p>
+            <div class="evidence-status status-progress">Prototyp in Entwicklung</div>
+          </div>
+
+          <div class="evidence-card">
+            <h4>Deterministische Entscheidungslogik</h4>
+            <p>Nachvollziehbare, versionierte Entscheidungsregeln für administrative Prozesse.</p>
+            <div class="evidence-status status-roadmap">Roadmap</div>
+          </div>
+
+          <div class="evidence-card">
+            <h4>Offline-Verifizierung</h4>
+            <p>Möglichkeit zur lokalen Verifizierung von Entscheidungen ohne Server-Verbindung.</p>
+            <div class="evidence-status status-roadmap">Roadmap</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Demo Panel</h2>
+        <p>Interaktive Demonstrationen zeigen, wie VFF-Systeme funktionieren (in Entwicklung).</p>
+
+        <div class="demo-panel">
+          <div class="demo-tabs">
+            <button class="demo-tab active">Process Map</button>
+            <button class="demo-tab">Required Docs</button>
+            <button class="demo-tab">Decision Steps</button>
+          </div>
+          <div class="demo-content">
+            <p>Demo-Funktionalität in Entwicklung. Beschreibe deinen Verwaltungsprozess, um eine strukturierte Analyse zu erhalten.</p>
+            <p style="margin-top: 16px;">
+              <strong>Geplant:</strong> Interaktives Tool zur Abbildung von Verwaltungsprozessen als maschinenlesbare Struktur mit klaren Entscheidungskriterien.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Benchmarks &amp; Targets</h2>
+        <p>Qualitätsziele für Performance, Sicherheit und Nutzbarkeit (ohne Fake-Zahlen).</p>
+
+        <div class="benchmarks">
+          <div class="benchmark-item">
+            <h4>Performance</h4>
+            <div class="benchmark-value">Ziel: 95+</div>
+            <div class="benchmark-target">Lighthouse Score</div>
+          </div>
+
+          <div class="benchmark-item">
+            <h4>Time to First Byte</h4>
+            <div class="benchmark-value">Ziel: &lt;200ms</div>
+            <div class="benchmark-target">Mit CDN</div>
+          </div>
+
+          <div class="benchmark-item">
+            <h4>Bundle Size</h4>
+            <div class="benchmark-value">Minimal</div>
+            <div class="benchmark-target">Optimiert für Geschwindigkeit</div>
+          </div>
+
+          <div class="benchmark-item">
+            <h4>Accessibility</h4>
+            <div class="benchmark-value">Ziel: 95+</div>
+            <div class="benchmark-target">WCAG 2.1 AA</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Nächste Schritte</h2>
+        <p>
+          Vision Future Frame befindet sich in der aktiven Entwicklungsphase. Konkrete Artefakte und 
+          Proof-of-Concepts werden schrittweise verfügbar gemacht, sobald sie den definierten Qualitätsstandards entsprechen.
+        </p>
+        <p>
+          Für Fragen zu aktuellen Entwicklungen oder für Einblicke in konkrete Prototypen, 
+          <a href="/#contact">kontaktieren Sie uns direkt</a>.
+        </p>
+      </section>
+    </div>
+
+    <footer>
+      <p>© 2025 Vision Future Frame – The frame that makes the future visible.</p>
+      <nav>
+        <a href="/">Startseite</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script>
+    // Simple tab functionality
+    document.querySelectorAll('.demo-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
