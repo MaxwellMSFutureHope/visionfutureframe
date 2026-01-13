@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – Vision Future Frame</title>
+  <meta name="description" content="Kontaktieren Sie Vision Future Frame für Pilotprojekte, Partnerschaften, Investments oder Talent-Anfragen">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://visionfutureframe.de/contact.html">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='4' y='4' width='32' height='32' rx='10' fill='%23050816' stroke='rgba(148,163,184,0.35)' stroke-width='1.2'/%3E%3Cpath d='M10 10 V30 H30' fill='none' stroke='%2352ffe0' stroke-width='2.4' stroke-linecap='round'/%3E%3Crect x='15' y='14' width='14' height='14' rx='4' fill='rgba(8,14,35,0.9)' stroke='%237b5cff' stroke-width='2'/%3E%3C/svg%3E">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://visionfutureframe.de/contact.html">
+  <meta property="og:title" content="Kontakt – Vision Future Frame">
+  <meta property="og:description" content="Kontaktieren Sie Vision Future Frame für Pilotprojekte, Partnerschaften, Investments oder Talent-Anfragen">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://visionfutureframe.de/contact.html">
+  <meta property="twitter:title" content="Kontakt – Vision Future Frame">
+  <meta property="twitter:description" content="Kontaktieren Sie Vision Future Frame für Pilotprojekte, Partnerschaften, Investments oder Talent-Anfragen">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --bg: #050814;
+      --bg-soft: #0b1020;
+      --bg-elevated: #0f172a;
+      --accent: #7b5cff;
+      --accent-hover: #8b6cff;
+      --text-main: #f4f4f7;
+      --text-soft: #b3b7c9;
+      --text-muted: #8b92a8;
+      --border-subtle: #20263a;
+      --ok: #3bd28f;
+      --danger: #ff4b6a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(123, 92, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(82, 255, 224, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at top, #111633 0, #050814 42%, #02030b 100%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      margin-bottom: 40px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 24px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .back-link:hover {
+      gap: 12px;
+      color: var(--text-main);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, #9aa4ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .content {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(15, 23, 42, 0.8);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.75);
+    }
+
+    p {
+      color: var(--text-soft);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    .form-container {
+      margin-top: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text-main);
+      font-size: 1rem;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(123, 92, 255, 0.1);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23b3b7c9' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 40px;
+    }
+
+    .btn-primary {
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(126, 89, 255, 0.9);
+      background: linear-gradient(135deg, #7b5cff 0%, #4431a3 100%);
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      margin-top: 8px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 60px rgba(123, 92, 255, 0.5);
+      background: linear-gradient(135deg, #8b6cff 0%, #4f37c0 100%);
+    }
+
+    .btn-secondary {
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-left: 12px;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(148, 163, 184, 0.9);
+      color: var(--text-main);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .form-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .info-box {
+      background: rgba(123, 92, 255, 0.1);
+      border-left: 3px solid var(--accent);
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    .info-box strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .contact-info {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .contact-info h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--text-main);
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-list li {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      align-items: baseline;
+    }
+
+    .contact-list li .label {
+      min-width: 100px;
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+
+    .contact-email {
+      color: #c4c8ff;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      transition: color 0.2s ease;
+    }
+
+    .contact-email:hover {
+      color: var(--accent);
+    }
+
+    .honeypot {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(148, 163, 184, 0.1);
+      text-align: center;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+    }
+
+    footer nav {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    footer a {
+      color: #9ca3ff;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      transition: color 0.2s ease;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 24px 16px;
+      }
+
+      .content {
+        padding: 24px 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-secondary {
+        margin-left: 0;
+        margin-top: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/" class="back-link">
+        ← Zurück zur Startseite
+      </a>
+      <h1>Kontakt</h1>
+    </header>
+
+    <div class="content">
+      <p>
+        Vision Future Frame befindet sich in der Aufbauphase: erste Prototypen, Förderanträge
+        (u. a. Prototype Fund, NLnet) und Gespräche mit politischen Akteur:innen, Förderstellen
+        und potenziellen Pilotpartner:innen sind angestoßen.
+      </p>
+      <p>
+        Wenn Sie Interesse an einem Gespräch, einem Pilotprojekt oder einem vertraulichen
+        Austausch zu AutoGovNext AI und weiteren VFF-Vorhaben haben, melden Sie sich gern direkt.
+      </p>
+
+      <div class="info-box">
+        <strong>Hinweis:</strong> Für vertrauliche Anfragen können wir diskrete Vorabgespräche vereinbaren. 
+        Wir fokussieren uns auf Wirkung und Substanz.
+      </div>
+
+      <form class="form-container" action="mailto:marcel.smarsch@visionfutureframe.de" method="post" enctype="text/plain" id="contact-form">
+        <!-- Honeypot für Spam-Schutz -->
+        <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
+        
+        <div class="form-group">
+          <label for="interest">Ihr Interesse *</label>
+          <select id="interest" name="interest" required>
+            <option value="">Bitte wählen Sie...</option>
+            <option value="pilot">Pilotpartner / Pilotprojekt</option>
+            <option value="partner">Partnerschaft / Kooperation</option>
+            <option value="invest">Investor / Förderung</option>
+            <option value="talent">Talent / Karriere</option>
+            <option value="other">Sonstiges</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-Mail *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Nachricht *</label>
+          <textarea id="message" name="message" required placeholder="Bitte beschreiben Sie kurz Ihr Anliegen..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">
+            Nachricht senden
+            <span aria-hidden="true">→</span>
+          </button>
+          <a href="mailto:marcel.smarsch@visionfutureframe.de?subject=Anfrage%20Vision%20Future%20Frame" class="btn-secondary">
+            Direkt per E-Mail kontaktieren
+          </a>
+        </div>
+      </form>
+
+      <div class="contact-info">
+        <h2>Direkter Kontakt</h2>
+        <ul class="contact-list">
+          <li>
+            <span class="label">Name</span>
+            <span>Marcel Smarsch</span>
+          </li>
+          <li>
+            <span class="label">Organisation</span>
+            <span>Vision Future Frame UG (i. G.)</span>
+          </li>
+          <li>
+            <span class="label">E-Mail</span>
+            <a href="mailto:marcel.smarsch@visionfutureframe.de" class="contact-email">marcel.smarsch@visionfutureframe.de</a>
+          </li>
+          <li>
+            <span class="label">Ort</span>
+            <span>Magdeburg, Deutschland</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 Vision Future Frame – The frame that makes the future visible.</p>
+      <nav>
+        <a href="/">Startseite</a>
+        <a href="/proof.html">Proof</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script>
+    // Form-Submit-Handling (mailto: Fallback)
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const interest = formData.get('interest');
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const message = formData.get('message');
+      
+      // Honeypot-Check
+      const honeypot = formData.get('website');
+      if (honeypot) {
+        return; // Spam erkannt
+      }
+      
+      const subject = encodeURIComponent(`Kontaktanfrage: ${interest} - ${name}`);
+      const body = encodeURIComponent(`Interesse: ${interest}\n\nName: ${name}\nE-Mail: ${email}\n\nNachricht:\n${message}`);
+      
+      window.location.href = `mailto:marcel.smarsch@visionfutureframe.de?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
