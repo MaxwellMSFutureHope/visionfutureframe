@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 – Seite nicht gefunden | Vision Future Frame</title>
+  <meta name="description" content="Die angeforderte Seite konnte nicht gefunden werden">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://visionfutureframe.de/404.html">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='4' y='4' width='32' height='32' rx='10' fill='%23050816' stroke='rgba(148,163,184,0.35)' stroke-width='1.2'/%3E%3Cpath d='M10 10 V30 H30' fill='none' stroke='%2352ffe0' stroke-width='2.4' stroke-linecap='round'/%3E%3Crect x='15' y='14' width='14' height='14' rx='4' fill='rgba(8,14,35,0.9)' stroke='%237b5cff' stroke-width='2'/%3E%3C/svg%3E">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --bg: #050814;
+      --bg-soft: #0b1020;
+      --bg-elevated: #0f172a;
+      --accent: #7b5cff;
+      --text-main: #f4f4f7;
+      --text-soft: #b3b7c9;
+      --border-subtle: #20263a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(123, 92, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(82, 255, 224, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at top, #111633 0, #050814 42%, #02030b 100%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      text-align: center;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(15, 23, 42, 0.8);
+      border-radius: 24px;
+      padding: 60px 40px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.75);
+    }
+
+    h1 {
+      font-size: 8rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, #9aa4ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+
+    p {
+      color: var(--text-soft);
+      margin-bottom: 32px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(126, 89, 255, 0.9);
+      background: linear-gradient(135deg, #7b5cff 0%, #4431a3 100%);
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-right: 12px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 60px rgba(123, 92, 255, 0.5);
+      background: linear-gradient(135deg, #8b6cff 0%, #4f37c0 100%);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(148, 163, 184, 0.9);
+      color: var(--text-main);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .links {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(148, 163, 184, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .links a {
+      color: #9ca3ff;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    .links a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 40px 24px;
+      }
+
+      h1 {
+        font-size: 5rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        display: block;
+        margin: 8px 0;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>404</h1>
+    <h2>Seite nicht gefunden</h2>
+    <p>
+      Die angeforderte Seite konnte nicht gefunden werden. 
+      Möglicherweise wurde sie verschoben oder existiert nicht mehr.
+    </p>
+    <div>
+      <a href="/" class="btn-primary">
+        Zur Startseite
+        <span aria-hidden="true">→</span>
+      </a>
+      <a href="/contact.html" class="btn-secondary">
+        Kontakt
+      </a>
+    </div>
+    <div class="links">
+      <a href="/">Startseite</a>
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="/about.html">Über uns</a>
+      <a href="/proof.html">Proof</a>
+      <a href="/updates.html">Updates</a>
+    </div>
+  </div>
+</body>
+</html>
