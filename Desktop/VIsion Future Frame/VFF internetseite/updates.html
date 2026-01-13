@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Updates – Vision Future Frame</title>
+  <meta name="description" content="Release Notes und Fortschritts-Updates von Vision Future Frame: Entwicklung, Pilotprojekte, neue Features">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://visionfutureframe.de/updates.html">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='4' y='4' width='32' height='32' rx='10' fill='%23050816' stroke='rgba(148,163,184,0.35)' stroke-width='1.2'/%3E%3Cpath d='M10 10 V30 H30' fill='none' stroke='%2352ffe0' stroke-width='2.4' stroke-linecap='round'/%3E%3Crect x='15' y='14' width='14' height='14' rx='4' fill='rgba(8,14,35,0.9)' stroke='%237b5cff' stroke-width='2'/%3E%3C/svg%3E">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://visionfutureframe.de/updates.html">
+  <meta property="og:title" content="Updates – Vision Future Frame">
+  <meta property="og:description" content="Release Notes und Fortschritts-Updates von Vision Future Frame">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://visionfutureframe.de/updates.html">
+  <meta property="twitter:title" content="Updates – Vision Future Frame">
+  <meta property="twitter:description" content="Release Notes und Fortschritts-Updates von Vision Future Frame">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --bg: #050814;
+      --bg-soft: #0b1020;
+      --bg-elevated: #0f172a;
+      --accent: #7b5cff;
+      --text-main: #f4f4f7;
+      --text-soft: #b3b7c9;
+      --text-muted: #8b92a8;
+      --border-subtle: #20263a;
+      --ok: #3bd28f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(123, 92, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(82, 255, 224, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at top, #111633 0, #050814 42%, #02030b 100%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      margin-bottom: 40px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 24px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .back-link:hover {
+      gap: 12px;
+      color: var(--text-main);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, #9aa4ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .content {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(15, 23, 42, 0.8);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.75);
+    }
+
+    p {
+      color: var(--text-soft);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    .updates-list {
+      margin: 32px 0;
+    }
+
+    .update-item {
+      padding: 28px;
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(16px);
+      margin-bottom: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .update-item:hover {
+      border-color: rgba(123, 92, 255, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .update-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .update-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-family: 'Courier New', monospace;
+    }
+
+    .update-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 0;
+      color: var(--text-main);
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .update-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: rgba(123, 92, 255, 0.15);
+      border: 1px solid rgba(123, 92, 255, 0.3);
+      color: #9ca3ff;
+    }
+
+    .update-content {
+      color: var(--text-soft);
+      line-height: 1.8;
+    }
+
+    .update-content h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 24px 0 12px;
+      color: var(--text-main);
+    }
+
+    .update-content h3:first-child {
+      margin-top: 0;
+    }
+
+    .update-content ul {
+      margin: 12px 0 12px 24px;
+      padding: 0;
+    }
+
+    .update-content li {
+      margin-bottom: 8px;
+    }
+
+    .update-content a {
+      color: #9ca3ff;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      transition: color 0.2s ease;
+    }
+
+    .update-content a:hover {
+      color: var(--accent);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-soft);
+    }
+
+    .empty-state p {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(148, 163, 184, 0.1);
+      text-align: center;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+    }
+
+    footer nav {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    footer a {
+      color: #9ca3ff;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      transition: color 0.2s ease;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 24px 16px;
+      }
+
+      .content {
+        padding: 24px 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .update-header {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .update-title {
+        min-width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/" class="back-link">
+        ← Zurück zur Startseite
+      </a>
+      <h1>Updates</h1>
+      <p>Release Notes und Fortschritts-Updates von Vision Future Frame</p>
+    </header>
+
+    <div class="content">
+      <div class="updates-list">
+        <article class="update-item">
+          <div class="update-header">
+            <span class="update-date">2025-01-27</span>
+            <h2 class="update-title">Website Launch & Struktur</h2>
+            <span class="update-tag">Infrastructure</span>
+          </div>
+          <div class="update-content">
+            <p>
+              Vision Future Frame Website ist live. Wir haben die Grundstruktur aufgebaut:
+            </p>
+            <h3>Neu hinzugefügt:</h3>
+            <ul>
+              <li>Contact-Seite mit Formular (Dropdown: Pilot/Partner/Investor/Talent)</li>
+              <li>Portfolio-Seite mit Status-Badges (Pilot/Holding/Vision)</li>
+              <li>About-Seite (Mission, Prinzipien, Hintergrund, Timeline)</li>
+              <li>Proof-Seite mit Artefakten und Benchmarks</li>
+            </ul>
+            <h3>Design-System:</h3>
+            <ul>
+              <li>Design Tokens (Spacing, Typography, Radius, Border, Glow)</li>
+              <li>Frame-IDs und Statuszeile im Header</li>
+              <li>Konsistentes Design über alle Seiten</li>
+            </ul>
+            <h3>SEO & Technik:</h3>
+            <ul>
+              <li>Sitemap mit 7 URLs</li>
+              <li>Open Graph & Twitter Cards</li>
+              <li>Schema.org Markup (Organization, WebSite, FAQPage)</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="update-item">
+          <div class="update-header">
+            <span class="update-date">2025-01</span>
+            <h2 class="update-title">AutoGovNext AI Prototyp in Entwicklung</h2>
+            <span class="update-tag">Development</span>
+          </div>
+          <div class="update-content">
+            <p>
+              Erste Prototypen für AutoGovNext AI werden entwickelt. Fokus liegt auf:
+            </p>
+            <ul>
+              <li>Maschinenlesbare Verwaltungsprozesse</li>
+              <li>Transparente Entscheidungsregeln</li>
+              <li>Privacy-by-Design Konzepte</li>
+              <li>Quality Gates für KI-Systeme</li>
+            </ul>
+            <p>
+              Weitere Details werden schrittweise verfügbar gemacht, sobald sie den 
+              definierten Qualitätsstandards entsprechen.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="empty-state" style="display: none;">
+        <p>Keine weiteren Updates verfügbar.</p>
+        <p>Neue Updates werden regelmäßig hinzugefügt.</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 Vision Future Frame – The frame that makes the future visible.</p>
+      <nav>
+        <a href="/">Startseite</a>
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/about.html">Über uns</a>
+        <a href="/contact.html">Kontakt</a>
+        <a href="/proof.html">Proof</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
