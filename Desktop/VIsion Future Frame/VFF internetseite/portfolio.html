@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio – Vision Future Frame</title>
+  <meta name="description" content="Vision Future Frame als Holding für KI-gestützte Infrastruktur: AutoGovNext AI und weitere Systeme">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://visionfutureframe.de/portfolio.html">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='4' y='4' width='32' height='32' rx='10' fill='%23050816' stroke='rgba(148,163,184,0.35)' stroke-width='1.2'/%3E%3Cpath d='M10 10 V30 H30' fill='none' stroke='%2352ffe0' stroke-width='2.4' stroke-linecap='round'/%3E%3Crect x='15' y='14' width='14' height='14' rx='4' fill='rgba(8,14,35,0.9)' stroke='%237b5cff' stroke-width='2'/%3E%3C/svg%3E">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://visionfutureframe.de/portfolio.html">
+  <meta property="og:title" content="Portfolio – Vision Future Frame">
+  <meta property="og:description" content="Vision Future Frame als Holding für KI-gestützte Infrastruktur: AutoGovNext AI und weitere Systeme">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="https://visionfutureframe.de/portfolio.html">
+  <meta property="twitter:title" content="Portfolio – Vision Future Frame">
+  <meta property="twitter:description" content="Vision Future Frame als Holding für KI-gestützte Infrastruktur: AutoGovNext AI und weitere Systeme">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --bg: #050814;
+      --bg-soft: #0b1020;
+      --bg-elevated: #0f172a;
+      --accent: #7b5cff;
+      --text-main: #f4f4f7;
+      --text-soft: #b3b7c9;
+      --border-subtle: #20263a;
+      --ok: #3bd28f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(123, 92, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(82, 255, 224, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at top, #111633 0, #050814 42%, #02030b 100%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      margin-bottom: 40px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 24px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .back-link:hover {
+      gap: 12px;
+      color: var(--text-main);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, #9aa4ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .content {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(15, 23, 42, 0.8);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.75);
+    }
+
+    p {
+      color: var(--text-soft);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin: 32px 0;
+    }
+
+    .portfolio-card {
+      padding: 28px;
+      border-radius: 20px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(16px);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .portfolio-card:hover {
+      border-color: rgba(123, 92, 255, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .portfolio-card .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      width: fit-content;
+    }
+
+    .status-badge.pilot {
+      background: rgba(59, 210, 143, 0.15);
+      border: 1px solid rgba(59, 210, 143, 0.4);
+      color: var(--ok);
+    }
+
+    .status-badge.holding {
+      background: rgba(123, 92, 255, 0.15);
+      border: 1px solid rgba(123, 92, 255, 0.4);
+      color: #9ca3ff;
+    }
+
+    .status-badge.vision {
+      background: rgba(148, 163, 184, 0.15);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text-soft);
+    }
+
+    .portfolio-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0;
+      color: var(--text-main);
+      line-height: 1.4;
+    }
+
+    .portfolio-card p {
+      margin: 0;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .portfolio-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .portfolio-card li {
+      position: relative;
+      padding-left: 20px;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+    }
+
+    .portfolio-card li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .portfolio-card .action-link {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #9ca3ff;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .portfolio-card .action-link:hover {
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(148, 163, 184, 0.1);
+      text-align: center;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+    }
+
+    footer nav {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    footer a {
+      color: #9ca3ff;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      transition: color 0.2s ease;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 24px 16px;
+      }
+
+      .content {
+        padding: 24px 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/" class="back-link">
+        ← Zurück zur Startseite
+      </a>
+      <h1>Portfolio</h1>
+    </header>
+
+    <div class="content">
+      <p>
+        Vision Future Frame ist der strukturelle Rahmen um AutoGovNext AI und weitere zukünftige
+        KI-Modelle herum – mit Fokus auf Public-Interest-Tech, europäische Förderlogiken und
+        langfristige Partnerschaften.
+      </p>
+      <p>
+        VFF denkt in Generationen, nicht in Quartalen. Ausrichtung an europäischen Werten und 
+        digitaler Souveränität. Raum für Spin-offs, Pilotprojekte und Kooperationen.
+      </p>
+
+      <div class="portfolio-grid">
+        <article class="portfolio-card">
+          <span class="status-badge pilot">Pilotprojekt</span>
+          <h3>AutoGovNext AI</h3>
+          <p>
+            Verwaltungs-KI & Formularkinfrastruktur. AutoGovNext AI denkt Verwaltungsprozesse neu: 
+            Anträge, Formulare und Entscheidungsregeln werden so strukturiert, dass sie maschinenlesbar, 
+            transparent und wiederverwendbar sind.
+          </p>
+          <ul>
+            <li>Abbildung von Formularen und Regeln als offene Infrastruktur</li>
+            <li>Schritt-für-Schritt-Begleitung für Bürger:innen & Organisationen</li>
+            <li>Langfristig: Baustein für teilautomatisierte Verwaltungsprozesse</li>
+          </ul>
+          <a href="/proof.html" class="action-link">
+            Proof ansehen →
+          </a>
+        </article>
+
+        <article class="portfolio-card">
+          <span class="status-badge holding">Holding</span>
+          <h3>VFF als Infrastruktur-Holding</h3>
+          <p>
+            Vision Future Frame ist der strukturelle Rahmen um AutoGovNext AI und weitere zukünftige
+            KI-Modelle herum – mit Fokus auf Public-Interest-Tech, europäische Förderlogiken und
+            langfristige Partnerschaften.
+          </p>
+          <ul>
+            <li>Denken in Generationen, nicht in Quartalen</li>
+            <li>Ausrichtung an europäischen Werten & digitaler Souveränität</li>
+            <li>Raum für Spin-offs, Pilotprojekte und Kooperationen</li>
+          </ul>
+        </article>
+
+        <article class="portfolio-card">
+          <span class="status-badge vision">Vision</span>
+          <h3>Weitere KI-Linien</h3>
+          <p>
+            Neben AutoGovNext AI werden weitere KI-Modelle vorbereitet, die andere Bereiche von
+            Verwaltung, Organisation und Alltag adressieren – bewusst noch nicht im Detail öffentlich.
+          </p>
+          <ul>
+            <li>Fokus auf echte Probleme, nicht auf Hype</li>
+            <li>Verbindung zu bestehenden und kommenden VFF-Bausteinen</li>
+            <li>Start erst, wenn Substanz und Partner:innen da sind</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 Vision Future Frame – The frame that makes the future visible.</p>
+      <nav>
+        <a href="/">Startseite</a>
+        <a href="/contact.html">Kontakt</a>
+        <a href="/proof.html">Proof</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
