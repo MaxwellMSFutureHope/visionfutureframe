@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoGovNext AI – Verwaltungs-KI & Formularkinfrastruktur | Vision Future Frame</title>
+  <meta name="description" content="AutoGovNext AI strukturiert Verwaltungsprozesse maschinenlesbar, transparent und wiederverwendbar. Schritt-für-Schritt-Begleitung für Bürger:innen und Organisationen.">
+  <meta name="keywords" content="AutoGovNext AI, Verwaltungs-KI, Formularkinfrastruktur, digitale Verwaltung, KI-gestützte Verwaltung, Public Interest AI">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://visionfutureframe.de/systems/autogovai.html">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://visionfutureframe.de/systems/autogovai.html">
+  <meta property="og:title" content="AutoGovNext AI – Verwaltungs-KI & Formularkinfrastruktur">
+  <meta property="og:description" content="Verwaltungsprozesse maschinenlesbar, transparent und wiederverwendbar strukturieren.">
+  <meta property="og:image" content="https://visionfutureframe.de/og-image.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://visionfutureframe.de/systems/autogovai.html">
+  <meta property="twitter:title" content="AutoGovNext AI – Verwaltungs-KI">
+  <meta property="twitter:description" content="Verwaltungsprozesse maschinenlesbar, transparent und wiederverwendbar strukturieren.">
+  
+  <!-- SoftwareApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AutoGovNext AI",
+    "applicationCategory": "GovernmentApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "description": "AutoGovNext AI strukturiert Verwaltungsprozesse maschinenlesbar, transparent und wiederverwendbar. Schritt-für-Schritt-Begleitung für Bürger:innen und Organisationen.",
+    "creator": {
+      "@type": "Organization",
+      "name": "Vision Future Frame",
+      "url": "https://visionfutureframe.de"
+    },
+    "featureList": [
+      "Maschinenlesbare Formulare und Entscheidungsregeln",
+      "Schritt-für-Schritt-Begleitung für Antragsteller",
+      "Transparente Entscheidungslogik",
+      "Wiederverwendbare Infrastruktur"
+    ]
+  }
+  </script>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --bg: #050814;
+      --bg-soft: #0b1020;
+      --bg-elevated: #0f172a;
+      --accent: #7b5cff;
+      --accent-hover: #8b6cff;
+      --text-main: #f4f4f7;
+      --text-soft: #b3b7c9;
+      --text-muted: #8b92a8;
+      --border-subtle: #20263a;
+      --border-glow: rgba(123, 92, 255, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(123, 92, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(82, 255, 224, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at top, #111633 0, #050814 42%, #02030b 100%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      margin-bottom: 40px;
+    }
+
+    .status-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-family: 'Courier New', monospace;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .status-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .status-bar-separator {
+      color: var(--border-subtle);
+    }
+
+    .frame-id {
+      font-family: 'Courier New', monospace;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      opacity: 0.6;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 24px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .back-link:hover {
+      gap: 12px;
+      color: var(--text-main);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, #9aa4ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+    }
+
+    .status-badge.prototype {
+      background: rgba(123, 92, 255, 0.2);
+      border: 1px solid rgba(123, 92, 255, 0.4);
+      color: #9ca3ff;
+    }
+
+    .status-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .status-badge.prototype::before {
+      background: #9ca3ff;
+    }
+
+    .content {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(15, 23, 42, 0.8);
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 32px;
+    }
+
+    .evidence-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .evidence-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-soft);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .evidence-chip:hover {
+      border-color: var(--accent);
+      color: var(--text-main);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .evidence-chip::before {
+      content: '◎';
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 32px 0 16px;
+      color: var(--text-main);
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 24px 0 12px;
+      color: var(--text-main);
+    }
+
+    p {
+      color: var(--text-soft);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    ul {
+      color: var(--text-soft);
+      margin: 16px 0 16px 24px;
+      line-height: 1.8;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .action-link:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(123, 92, 255, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .content {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="status-bar">
+        <span class="status-bar-item">MODE: PUBLIC</span>
+        <span class="status-bar-separator">|</span>
+        <span class="status-bar-item">BUILD: v2026.01</span>
+        <span class="status-bar-separator">|</span>
+        <span class="frame-id">FRAME-02 / AUTO-GOV-AI</span>
+      </div>
+      <a href="/" class="back-link">
+        ← Zurück zur Startseite
+      </a>
+      <h1>AutoGovNext AI</h1>
+      <div class="status-badge prototype">
+        Status: Prototype
+      </div>
+    </header>
+
+    <div class="content">
+      <p>
+        <strong>AutoGovNext AI</strong> denkt Verwaltungsprozesse neu: Anträge, Formulare und Entscheidungsregeln
+        werden so strukturiert, dass sie maschinenlesbar, transparent und wiederverwendbar sind.
+      </p>
+
+      <div class="evidence-chips">
+        <a href="/proof.html" class="evidence-chip">Screenshot</a>
+        <a href="/proof.html" class="evidence-chip">Report</a>
+        <a href="/proof.html" class="evidence-chip">Repo</a>
+        <a href="/proof.html" class="evidence-chip">Demo</a>
+      </div>
+
+      <h2>Was ist AutoGovNext AI?</h2>
+      <p>
+        AutoGovNext AI ist der erste Baustein von Vision Future Frame – eine Verwaltungs-KI für Formularkinfrastruktur.
+        Das System strukturiert Anträge, Formulare und Entscheidungsregeln maschinenlesbar, transparent und
+        wiederverwendbar. Es bietet Schritt-für-Schritt-Begleitung für Bürger:innen und Organisationen.
+      </p>
+
+      <h2>Kernfunktionen</h2>
+      <ul>
+        <li><strong>Maschinenlesbare Formulare:</strong> Anträge und Formulare werden als offene Infrastruktur abgebildet</li>
+        <li><strong>Transparente Entscheidungsregeln:</strong> Entscheidungslogik ist nachvollziehbar und versioniert</li>
+        <li><strong>Schritt-für-Schritt-Begleitung:</strong> Unterstützung für Bürger:innen und Organisationen</li>
+        <li><strong>Wiederverwendbare Infrastruktur:</strong> Baustein für teilautomatisierte Verwaltungsprozesse</li>
+      </ul>
+
+      <h2>Zielgruppe</h2>
+      <p>
+        AutoGovNext AI richtet sich an Verwaltungen und öffentliche Stellen, die ihre Formular- und Antragsprozesse
+        modernisieren möchten. Das System ist für Pilotprojekte konzipiert und wird in enger Zusammenarbeit mit
+        Verwaltungspartnern entwickelt.
+      </p>
+
+      <h2>Status & Roadmap</h2>
+      <p>
+        AutoGovNext AI befindet sich aktuell im <strong>Prototyp-Status</strong>. Erste Konzepte und Proof-of-Concepts
+        sind in Entwicklung. Die Roadmap sieht vor, dass das System in Pilotprojekten mit Verwaltungspartnern getestet
+        und weiterentwickelt wird.
+      </p>
+
+      <a href="/contact.html" class="action-link">
+        Pilot anfragen →
+      </a>
+    </div>
+  </div>
+</body>
+</html>
