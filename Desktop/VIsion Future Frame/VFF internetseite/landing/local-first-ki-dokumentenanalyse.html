@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local-first KI Dokumentenanalyse – Vision Future Frame</title>
+  <meta name="description" content="Local-first KI für Dokumentenanalyse mit Datenschutz im Fokus. Lokale Datenverarbeitung, Privacy-by-Design und mehrstufige Redaction für PII-Schutz.">
+  <meta name="keywords" content="Local-first KI, Dokumentenanalyse, lokale Datenverarbeitung, Privacy-by-Design, PII-Schutz, Datenschutz KI, Vault">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://visionfutureframe.de/landing/local-first-ki-dokumentenanalyse.html">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://visionfutureframe.de/landing/local-first-ki-dokumentenanalyse.html">
+  <meta property="og:title" content="Local-first KI Dokumentenanalyse – Vision Future Frame">
+  <meta property="og:description" content="KI für Dokumentenanalyse mit lokaler Datenverarbeitung und Datenschutz im Fokus.">
+  <meta property="og:image" content="https://visionfutureframe.de/og-image.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://visionfutureframe.de/landing/local-first-ki-dokumentenanalyse.html">
+  <meta property="twitter:title" content="Local-first KI Dokumentenanalyse">
+  <meta property="twitter:description" content="KI für Dokumentenanalyse mit lokaler Datenverarbeitung.">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --bg: #050814;
+      --bg-soft: #0b1020;
+      --bg-elevated: #0f172a;
+      --accent: #7b5cff;
+      --accent-hover: #8b6cff;
+      --text-main: #f4f4f7;
+      --text-soft: #b3b7c9;
+      --text-muted: #8b92a8;
+      --border-subtle: #20263a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(123, 92, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(82, 255, 224, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at top, #111633 0, #050814 42%, #02030b 100%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      margin-bottom: 40px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 24px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .back-link:hover {
+      gap: 12px;
+      color: var(--text-main);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, #9aa4ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .content {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(15, 23, 42, 0.8);
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 32px 0 16px;
+      color: var(--text-main);
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 24px 0 12px;
+      color: var(--text-main);
+    }
+
+    p {
+      color: var(--text-soft);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    ul {
+      color: var(--text-soft);
+      margin: 16px 0 16px 24px;
+      line-height: 1.8;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .cta-section {
+      background: rgba(123, 92, 255, 0.1);
+      border: 1px solid rgba(123, 92, 255, 0.3);
+      border-radius: 16px;
+      padding: 32px;
+      margin: 32px 0;
+      text-align: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      padding: 14px 28px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(123, 92, 255, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .content {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/" class="back-link">
+        ← Zurück zur Startseite
+      </a>
+      <h1>Local-first KI Dokumentenanalyse</h1>
+    </header>
+
+    <div class="content">
+      <p>
+        <strong>Dokumentenanalyse mit Datenschutz im Fokus</strong> – Vision Future Frame entwickelt
+        Local-first KI-Lösungen für Dokumentenanalyse, die Daten lokal verarbeiten und maximale
+        Kontrolle für Nutzer:innen bieten.
+      </p>
+
+      <h2>Was ist Local-first KI?</h2>
+      <p>
+        Local-first KI bedeutet, dass Datenverarbeitung primär lokal stattfindet – auf dem Gerät
+        oder Server der Nutzer:innen. Daten werden nicht an externe Server gesendet, sondern
+        lokal verarbeitet und analysiert.
+      </p>
+
+      <h3>Vorteile von Local-first KI</h3>
+      <ul>
+        <li><strong>Datenschutz:</strong> Daten verlassen nicht die Kontrolle der Nutzer:innen</li>
+        <li><strong>Sicherheit:</strong> Keine Übertragung sensibler Daten über das Internet</li>
+        <li><strong>Kontrolle:</strong> Vollständige Kontrolle über Datenverarbeitung</li>
+        <li><strong>Unabhängigkeit:</strong> Funktion auch ohne Internetverbindung</li>
+        <li><strong>Compliance:</strong> Einfacherer Nachweis der DSGVO-Konformität</li>
+      </ul>
+
+      <h2>Dokumentenanalyse mit Local-first Ansatz</h2>
+      <p>
+        Dokumentenanalyse mit Local-first KI ermöglicht es, Dokumente lokal zu analysieren,
+        zu klassifizieren und zu strukturieren, ohne dass Daten an externe Server gesendet werden.
+      </p>
+
+      <h3>Anwendungsbereiche</h3>
+      <ul>
+        <li><strong>Dokumentenklassifikation:</strong> Automatische Kategorisierung von Dokumenten</li>
+        <li><strong>Informationsextraktion:</strong> Strukturierte Erfassung von Informationen</li>
+        <li><strong>Dokumentenanalyse:</strong> Analyse von Inhalten und Strukturen</li>
+        <li><strong>Redaction:</strong> Mehrstufige Redaction für PII-Schutz</li>
+        <li><strong>Validierung:</strong> Automatische Prüfung von Dokumenten</li>
+      </ul>
+
+      <h2>Vault: Local-first Datenverarbeitung</h2>
+      <p>
+        Vault ist ein Konzept für lokale, datenschutz-konforme Datenverarbeitung mit mehrstufigen
+        Redaction-Konzepten für den Schutz personenbezogener Informationen (PII). Das System
+        ermöglicht Local-first Datenverarbeitung mit maximaler Kontrolle für Nutzer:innen.
+      </p>
+
+      <h3>Kernfunktionen von Vault</h3>
+      <ul>
+        <li><strong>Lokale Datenverarbeitung:</strong> Daten werden primär lokal verarbeitet</li>
+        <li><strong>Mehrstufige Redaction (L0-L3):</strong> Flexible Redaction-Level für PII-Schutz</li>
+        <li><strong>Datenminimierung:</strong> Nur notwendige Daten werden verarbeitet</li>
+        <li><strong>Klare Freigabe-Mechanismen:</strong> Transparente Kontrolle über Datenweitergabe</li>
+      </ul>
+
+      <h2>Vorteile für Verwaltungen</h2>
+      <p>
+        Local-first KI für Dokumentenanalyse ist besonders wertvoll für Verwaltungen, die mit
+        sensiblen personenbezogenen Daten arbeiten und höchste Anforderungen an Datenschutz haben.
+      </p>
+
+      <h3>Besondere Vorteile</h3>
+      <ul>
+        <li><strong>DSGVO-Konformität:</strong> Einfacherer Nachweis der Datenschutz-Konformität</li>
+        <li><strong>Vertrauen:</strong> Bürger:innen vertrauen Systemen, die Daten lokal verarbeiten</li>
+        <li><strong>Sicherheit:</strong> Reduziertes Risiko von Datenlecks</li>
+        <li><strong>Kontrolle:</strong> Vollständige Kontrolle über Datenverarbeitung</li>
+      </ul>
+
+      <div class="cta-section">
+        <h2>Erfahren Sie mehr</h2>
+        <p>
+          Kontaktieren Sie uns für weitere Informationen über Local-first KI für Dokumentenanalyse.
+        </p>
+        <a href="/contact.html" class="btn-primary">
+          Kontakt aufnehmen →
+        </a>
+      </div>
+
+      <h2>Weitere Informationen</h2>
+      <p>
+        Erfahren Sie mehr über <a href="/systems/vault.html" style="color: var(--accent);">Vault</a>
+        oder sehen Sie sich unsere <a href="/proof.html" style="color: var(--accent);">Proof & Artefakte</a> an.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
